@@ -1,0 +1,93 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header and Navigation */
+/* Header and Navigation */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px; /* Adds padding around the links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Change to the background color you want when hovered */
+    color: #fff; /* Change text color on hover (optional) */
+    border-radius: 5px; /* Adds rounded corners to the box */
+}
+
+
+/* Sections */
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Home Section */
+.intro {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.intro h1 {
+    font-size: 2.5em;
+}
+
+.intro p {
+    font-size: 1.2em;
+}
+
+/* About, Research, and Contact Sections */
+h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.intro img.profile-image {
+    width: 300px;  /* Adjust to the desired width */
+    height: 300px;  /* Adjust to the desired height */
+    border-radius: 50%;  /* Makes the image circular */
+    object-fit: cover;  /* Ensures the image fits within the circle */
+    margin-bottom: 1px;  /* Adds space between image and text */
+}
