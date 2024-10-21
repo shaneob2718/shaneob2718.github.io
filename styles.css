@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #4d79ff;
     color: #333;
 }
 
@@ -108,4 +108,19 @@ footer p {
     border-radius: 50%;  /* Makes the image circular */
     object-fit: cover;  /* Ensures the image fits within the circle */
     margin-bottom: 1px;  /* Adds space between image and text */
+}
+
+/* Base Styles for the CV Embed */
+.cv-embed iframe {
+    width: 50%;            /* Make the iframe take the full width of its container */
+    height: 600px;          /* Default height */
+    max-width: 100%;        /* Prevents overflow on wider screens */
+    border: none;
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .cv-embed iframe {
+        height: 100vh;      /* Make iframe height fill the screen on smaller devices */
+    }
 }
