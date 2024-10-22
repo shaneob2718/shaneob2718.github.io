@@ -41,6 +41,11 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+nav ul li a.active {
+    color: red;  /* Highlight color for the active link */
+    font-weight: bold;
+}
+
 /* Mobile-Friendly Navigation (Media Query) */
 @media (max-width: 768px) {
     nav ul {
@@ -90,17 +95,34 @@ h2 {
 }
 
 /* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    margin-top: 20px;
+/* Make sure the html and body take up the full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Arrange content in a column */
 }
 
-footer p {
-    margin: 0;
+/* Flex-grow to the main content, so it pushes the footer down */
+main {
+    flex: 1;
 }
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+/* Optional: Ensuring footer stays at the bottom even with short content */
+footer {
+    flex-shrink: 0; /* Ensures the footer doesn't shrink */
+}
+
 
 .intro img.profile-image {
     width: 300px;  /* Adjust to the desired width */
@@ -124,3 +146,47 @@ footer p {
         height: 100vh;      /* Make iframe height fill the screen on smaller devices */
     }
 }
+
+/* Flexbox container for Home and About sections */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Ensure there's space around the sections */
+    align-items: stretch; /* Ensure sections stretch to the same height */
+    gap: 20px; /* Adds spacing between the two sections */
+    padding: 20px;
+}
+
+/* Style for individual sections inside the flex container */
+.flex-container section {
+    flex: 1 1 45%; /* Allow sections to grow and take up ~45% of the container */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    /*max-width: 600px; /* Optional: Set a max width to prevent sections from getting too wide */
+}
+
+/* Add some margin to space the content within the sections */
+section h1, section h2, section p {
+    margin-bottom: 15px;
+}
+
+/* Profile image styling */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+    .flex-container section {
+        max-width: 100%; /* Take up full width on smaller screens */
+    }
+}
+
+
