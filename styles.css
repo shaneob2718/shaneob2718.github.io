@@ -4,7 +4,10 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #4d79ff;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe, #93c5fd);
+    background-attachment: fixed; /* Optional: keep it stationary */
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #333;
 }
 
@@ -72,6 +75,16 @@ section {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for individual sections inside the flex container */
+.flex-container section {
+    flex: 1 1 45%; /* Allow sections to grow and take up ~45% of the container */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    /*max-width: 600px; /* Optional: Set a max width to prevent sections from getting too wide */
 }
 
 /* Home Section */
@@ -155,16 +168,6 @@ footer {
     align-items: stretch; /* Ensure sections stretch to the same height */
     gap: 20px; /* Adds spacing between the two sections */
     padding: 20px;
-}
-
-/* Style for individual sections inside the flex container */
-.flex-container section {
-    flex: 1 1 45%; /* Allow sections to grow and take up ~45% of the container */
-    padding: 20px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    /*max-width: 600px; /* Optional: Set a max width to prevent sections from getting too wide */
 }
 
 /* Add some margin to space the content within the sections */
