@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- For url to specific group: notes.html#lecture-notes -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes | Shane O'Brien</title>
+  <meta name="description" content="Derivations, lecture notes, and physics reference notes by Shane O'Brien." />
+  <link rel="stylesheet" href="styles.css?v=21" />
+  <script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        var saved = localStorage.getItem('site-theme');
+        var theme = (urlTheme === 'dark' || urlTheme === 'light') ? urlTheme : saved;
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <style>
+    .notes-shell {
+      display: grid;
+      gap: 1rem;
+    }
+
+
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.25rem;
+    }
+
+    .tab-button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      color: var(--muted);
+      font: inherit;
+      font-weight: 600;
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition:
+        color 0.18s ease,
+        background-color 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .tab-button:hover {
+      color: var(--text);
+      background: var(--accent-soft);
+    }
+
+    .tab-button.active {
+      color: #3B82F6;
+      background: rgba(59, 130, 246, 0.10);
+      border-color: rgba(59, 130, 246, 0.28);
+      box-shadow:
+        0 0 0 1px rgba(59, 130, 246, 0.18),
+        0 0 14px rgba(59, 130, 246, 0.12);
+    }
+
+    html[data-theme="dark"] .tab-button.active {
+      color: #93C5FD;
+      background: rgba(96, 165, 250, 0.14);
+      border-color: rgba(147, 197, 253, 0.28);
+      box-shadow:
+        0 0 0 1px rgba(147, 197, 253, 0.15),
+        0 0 14px rgba(96, 165, 250, 0.16);
+    }
+
+    .tab-panels {
+      position: relative;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .notes-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .note-card h2 {
+      margin-top: 0;
+      margin-bottom: 0.55rem;
+      font-size: 1.3rem;
+    }
+
+    .note-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .note-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0 0;
+    }
+
+    .note-tag {
+      display: inline-block;
+      padding: 0.28rem 0.62rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--accent-soft);
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .equation-box {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--accent-soft);
+      overflow-x: auto;
+    }
+
+    .equation-box p {
+      margin: 0 0 0.65rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .note-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .note-actions .button {
+      min-width: 8.5rem;
+      text-align: center;
+    }
+
+    .note-list-clean {
+      margin: 0.8rem 0 0;
+      padding-left: 1.15rem;
+    }
+
+    .note-list-clean li + li {
+      margin-top: 0.45rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Shane O'Brien</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="research.html">Research</a>
+        <span class="nav-sep">|</span>
+        <a href="publications.html">Publications &amp; Presentations</a>
+        <span class="nav-sep">|</span>
+        <a href="teaching.html">Teaching &amp; Mentoring</a>
+        <span class="nav-sep">|</span>
+        <a href="notes.html">Notes</a>
+      </div>
+      <div class="theme-control">
+        <span class="theme-label" id="theme-label">Light</span>
+        <label class="theme-switch" for="theme-toggle" aria-label="Toggle night mode">
+          <input class="theme-toggle-input" id="theme-toggle" type="checkbox" />
+          <span class="theme-toggle-slider" aria-hidden="true"></span>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Notes</h1>
+      <p class="section-intro">
+        A collection of derivations, lecture notes, and other references of interest.
+        Derivations here are not necessarily original, but they are meant to serve as a reference.
+      </p>
+    </section>
+
+    <section class="notes-shell">
+      <section class="card">
+        <div class="placeholder-label">Browse by Category</div>
+        <div class="tab-bar" role="tablist" aria-label="Notes categories">
+          <button class="tab-button active" type="button" role="tab" aria-selected="true" aria-controls="panel-derivations" id="tab-derivations" data-tab="derivations">Derivations</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-lecture-notes" id="tab-lecture-notes" data-tab="lecture-notes">Lecture Notes</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="panel-other" id="tab-other" data-tab="other">Other</button>
+        </div>
+      </section>
+
+      <section class="tab-panels">
+        <div class="tab-panel active" id="panel-derivations" role="tabpanel" aria-labelledby="tab-derivations" data-panel="derivations">
+          <div class="notes-list">
+            <section class="card note-card">
+              <div class="placeholder-label">Derivations</div>
+              <h2>Derivation of the Speed of Light from Maxwell's Equations</h2>
+              <div class="note-meta">Electromagnetism</div>
+              <p>
+                A derivation showing how Maxwell's Equations can be written into the form of a wave equation, 
+                from which the speed of light can be easily determined.
+              </p>
+              <div class="equation-box">
+                <p>E-Field Wave Equation:</p>
+                \[
+                  \frac{\partial^2 \mathbf{E}}{\partial t^2} = \left( \frac{1}{\mu_0 \epsilon_0} \right) \nabla^2\mathbf{E} \implies v=\frac{1}{\sqrt{\mu_0 \epsilon_0}}=3\cdot 10^8 \mbox{m/s}=c
+                \]
+              </div>
+              <div class="note-actions">
+                <a class="button" href="Notes/Derivations/EM_Wave_Equation_Derivation.pdf" target="_blank" rel="noopener noreferrer">See full derivation</a>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-lecture-notes" role="tabpanel" aria-labelledby="tab-lecture-notes" data-panel="lecture-notes">
+          <div class="notes-list">
+            <section class="card note-card">
+              <div class="placeholder-label">Lecture Notes</div>
+              <h2>AP Physics C Teaching Lecture Notes</h2>
+              <div class="note-meta">2024-2025 School Year</div>
+              <p>
+                A collection of my lecture notes from when I taught AP Physics C at SCY High School.
+              </p>
+              <ul class="note-list-clean">
+                <li><strong>AP Physics C Teaching Material:</strong> Week-by-week lecture summaries and worked examples. To be added.</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        <!--
+        <div class="tab-panel" id="panel-other" role="tabpanel" aria-labelledby="tab-other" data-panel="other">
+          <div class="notes-list">
+            <section class="card note-card">
+              <div class="placeholder-label">Other</div>
+              <h2>Short Technical References</h2>
+              <div class="note-meta">Useful for compact formula pages, conventions, and reminders</div>
+              <p>
+                Keep this section for shorter pages that you want to access quickly, such as sign conventions, common identities,
+                notation summaries, coding references, or reminders for recurring calculations.
+              </p>
+              <div class="equation-box">
+                <p>Example reference item:</p>
+                \[
+                  \nabla^2 \phi = -\frac{\rho}{\varepsilon_0}
+                \]
+              </div>
+              <div class="note-tags">
+                <span class="note-tag">Reference</span>
+                <span class="note-tag">Quick Lookup</span>
+              </div>
+            </section>
+
+            <section class="card note-card">
+              <div class="placeholder-label">Possible Uses</div>
+              <h2>What Else Can Live Here</h2>
+              <ul class="note-list-clean">
+                <li>Formula sheets and convention summaries</li>
+                <li>Python snippets or analysis reminders</li>
+                <li>Reading notes from papers or textbooks</li>
+                <li>Exam prep sheets or oral-exam outlines</li>
+                <li>Research-specific scratch references</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+    </section>
+    -->
+
+    <footer class="site-footer">
+      <p>&copy; <span id="copyright-date"></span> Shane O'Brien. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script src="script.js?v=21"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script>
+    (function () {
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.tab-button'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
+      var validTabs = ['derivations', 'lecture-notes', 'other'];
+
+      function setActiveTab(name, updateHash) {
+        if (validTabs.indexOf(name) === -1) {
+          name = 'derivations';
+        }
+
+        buttons.forEach(function (button) {
+          var isActive = button.getAttribute('data-tab') === name;
+          button.classList.toggle('active', isActive);
+          button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          button.tabIndex = isActive ? 0 : -1;
+        });
+
+        panels.forEach(function (panel) {
+          var isActive = panel.getAttribute('data-panel') === name;
+          panel.classList.toggle('active', isActive);
+        });
+
+        if (updateHash) {
+          if (history.replaceState) {
+            history.replaceState(null, '', '#' + name);
+          } else {
+            window.location.hash = name;
+          }
+        }
+
+        if (window.MathJax && typeof window.MathJax.typesetPromise === 'function') {
+          window.MathJax.typesetPromise();
+        }
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          setActiveTab(button.getAttribute('data-tab'), true);
+        });
+      });
+
+      window.addEventListener('hashchange', function () {
+        var hash = window.location.hash.replace('#', '');
+        if (hash) {
+          setActiveTab(hash, false);
+        }
+      });
+
+      var initialHash = window.location.hash.replace('#', '');
+      setActiveTab(initialHash || 'derivations', false);
+    })();
+  </script>
+  
+</body>
+</html>

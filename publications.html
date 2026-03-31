@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications | Shane O'Brien</title>
+  <link rel="stylesheet" href="styles.css?v=21" />
+<script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        var saved = localStorage.getItem('site-theme');
+        var theme = (urlTheme === 'dark' || urlTheme === 'light') ? urlTheme : saved;
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Shane O'Brien</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="research.html">Research</a>
+        <span class="nav-sep">|</span>
+        <a href="publications.html">Publications &amp; Presentations</a>
+        <span class="nav-sep">|</span>
+        <a href="teaching.html">Teaching &amp; Mentoring</a>
+        <span class="nav-sep">|</span>
+        <a href="notes.html">Notes</a>
+      </div>
+      <div class="theme-control">
+        <span class="theme-label" id="theme-label">Light</span>
+        <label class="theme-switch" for="theme-toggle" aria-label="Toggle night mode">
+          <input class="theme-toggle-input" id="theme-toggle" type="checkbox" />
+          <span class="theme-toggle-slider" aria-hidden="true"></span>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Publications & Presentations</h1>
+      <p class="section-intro">A collection of my publications, preprints, and conference materials.</p>
+    </section>
+
+    <section class="card">
+      <h2>Publications/Preprints</h2>
+
+        <div class="pub-entry">
+          <strong>Searching for GEMS: TOI-5916 b &amp; TOI-6158 b are two Saturn-density planets orbiting M2 dwarfs</strong><br />
+          <span class="muted">
+            <u>Authors:</u> <strong>O'Brien, S.</strong>, Wong, A., Han, T., et al.
+          </span><br />
+          <span class="small">
+            arXiv Link: <a href="https://arxiv.org/abs/2510.11798" target="_blank" rel="noopener noreferrer" style="color: #3B82F6;">2510.11798</a><br />
+            ApJ: Submitted, undergoing review.
+          </span>
+        </div>
+
+    </section>
+
+    <section class="section card">
+      <h2>Conference Posters</h2>
+      <div class="timeline-item">
+        <strong>Searching for GEMS: TOI-5916 b & TOI-6158 b are two Saturn-density planets orbiting M2 dwarfs</strong><br />
+        <span class="muted">APS Global Summit 2026, Denver, CO, March 2026</span><br />
+        <span class="small">
+          <a href="Posters/APS_GEMS_Poster.pdf" target="_blank" rel="noopener noreferrer" style="color: #3B82F6;">View Poster PDF</a>
+        </span>
+      </div>
+      <div class="timeline-item">
+        <strong>A New Software for Modeling and Optimizing Superconducting Direct Wind Magnets</strong><br />
+        <span class="muted">Brookhaven National Laborartory Fall SULI Poster Session, Upton, NY, Dec. 2025</span><br />
+        <span class="small">
+          <a href="Posters/OBRIEN_S_poster_FALL.pdf" target="_blank" rel="noopener noreferrer" style="color: #3B82F6;">View Poster PDF</a>
+        </span>
+      </div>
+    </section>
+<!--
+    <section class="section card">
+      <h2>Talks</h2>
+      <div class="timeline-item">
+        <strong>[Talk Title]</strong><br />
+        <span class="muted">[Institution / Seminar / Group Meeting], [Month Year]</span>
+      </div>
+      <div class="timeline-item">
+        <strong>[Talk Title]</strong><br />
+        <span class="muted">[Institution / Seminar / Group Meeting], [Month Year]</span>
+      </div>
+    </section>
+-->
+
+
+            <footer class="site-footer">
+      <p>&copy; <span id="copyright-date"></span> Shane O'Brien. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script src="script.js?v=21"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shane O'Brien | Physics Graduate Student</title>
+  <meta name="description" content="Personal academic website for Shane O'Brien, physics graduate student." />
+  <link rel="stylesheet" href="styles.css?v=21" />
+  <script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        var saved = localStorage.getItem('site-theme');
+        var theme = (urlTheme === 'dark' || urlTheme === 'light') ? urlTheme : saved;
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <style>
+    .hero-columns {
+      display: grid;
+      grid-template-columns: 1.5fr 0.9fr;
+      gap: 2rem;
+      align-items: start;
+      padding: 1.25rem 0 1rem;
+    }
+
+    .hero-column {
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .hero-card {
+      padding: 0.9rem 1.5rem 1.5rem;
+    }
+
+    .hero-card h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin: 0 0 0.9rem;
+      font-weight: 700;
+    }
+
+    .placeholder-label {
+      margin-bottom: 0.35rem;
+    }
+
+    .education-item + .education-item {
+      margin-top: 0.95rem;
+      padding-top: 0.95rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .education-degree {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .education-school {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .education-note {
+      color: var(--muted);
+      margin: 0.2rem 0 0;
+      font-size: 0.96rem;
+    }
+
+    .connect-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    .connect-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-width: 0;
+      padding: 0.55rem 0.85rem;
+      text-align: center;
+    }
+
+    .connect-links .connect-button:last-child {
+      grid-column: 1 / -1;
+      width: calc(50% - 0.375rem);
+      justify-self: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .connect-links {
+        grid-template-columns: 1fr;
+        max-width: none;
+      }
+
+      .connect-links .connect-button:last-child {
+        grid-column: auto;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Shane O'Brien</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="research.html">Research</a>
+        <span class="nav-sep">|</span>
+        <a href="publications.html">Publications &amp; Presentations</a>
+        <span class="nav-sep">|</span>
+        <a href="teaching.html">Teaching &amp; Mentoring</a>
+        <span class="nav-sep">|</span>
+        <a href="notes.html">Notes</a>
+      </div>
+      <div class="theme-control">
+        <span class="theme-label" id="theme-label">Light</span>
+        <label class="theme-switch" for="theme-toggle" aria-label="Toggle night mode">
+          <input class="theme-toggle-input" id="theme-toggle" type="checkbox" />
+          <span class="theme-toggle-slider" aria-hidden="true"></span>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero-columns">
+      <div class="hero-column">
+        <div class="hero-card">
+          <div class="placeholder-label">Introduction</div>
+          <h1>Shane O'Brien</h1>
+
+          <p class="lead">
+            I am an incoming first-year physics graduate student at the University of Massachusetts Amherst with research interests in leveraging AI
+            and computing power to better our understanding of fundamental physics and interactions.
+          </p>
+
+          <p class="lead">
+            This site is a collection of information about my research, publications, presentations, and teaching experience. 
+            I also have a notes page where I upload derivations and lecture notes of interest for reference.
+          </p>
+        </div>
+
+        <section class="card education-card">
+          <div class="placeholder-label">Education</div>
+
+          <div class="education-item">
+            <span class="education-degree">Ph.D. in Physics</span>
+            <p class="education-school">University of Massachusetts Amherst</p>
+            <p class="education-note">Incoming, Fall 2026</p>
+          </div>
+
+          <div class="education-item">
+            <span class="education-degree">B.S. in Physics, Specialization in Astrophysics</span>
+            <p class="education-school">University of California, Irvine (UCI)</p>
+            <p class="education-note">2020-2024</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="hero-column">
+        <div class="headshot-placeholder">
+          <img src="Images/headshot.jpg" alt="Shane O'Brien headshot" class="headshot" />
+        </div>
+
+        <section class="card contact-card">
+          <div class="placeholder-label">Contact Info</div>
+          <div class="connect-links">
+            <a class="button connect-button" href="mailto:shaneob1619@gmail.com">Email</a>
+            <a class="button connect-button" href="https://www.linkedin.com/in/shaneob1619/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="button connect-button" href="https://github.com/shaneob2718" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button connect-button" href="https://scholar.google.com/citations?user=QF4YatYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a class="button connect-button" href="https://orcid.org/0009-0005-9015-4699" target="_blank" rel="noopener noreferrer">ORCID</a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="copyright-date"></span> Shane O'Brien. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script src="script.js?v=21"></script>
+</body>
+</html>

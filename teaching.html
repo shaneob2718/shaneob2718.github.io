@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching &amp; Mentoring | Shane O'Brien</title>
+  <link rel="stylesheet" href="styles.css?v=21" />
+  <script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        var saved = localStorage.getItem('site-theme');
+        var theme = (urlTheme === 'dark' || urlTheme === 'light') ? urlTheme : saved;
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Shane O'Brien</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="research.html">Research</a>
+        <span class="nav-sep">|</span>
+        <a href="publications.html">Publications &amp; Presentations</a>
+        <span class="nav-sep">|</span>
+        <a href="teaching.html">Teaching &amp; Mentoring</a>
+        <span class="nav-sep">|</span>
+        <a href="notes.html">Notes</a>
+      </div>
+      <div class="theme-control">
+        <span class="theme-label" id="theme-label">Light</span>
+        <label class="theme-switch" for="theme-toggle" aria-label="Toggle night mode">
+          <input class="theme-toggle-input" id="theme-toggle" type="checkbox" />
+          <span class="theme-toggle-slider" aria-hidden="true"></span>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Teaching & Mentoring</h1>
+      <p class="section-intro">Information about my teaching & mentoring experience.</p>
+    </section>
+
+<section class="card">
+  <h2>Teaching Experience</h2>
+
+  <div class="timeline-item">
+    <strong>AP Physics C Instructor</strong><br />
+    <span class="muted">SCY High School, 2024-2025 School Year</span>
+    <p class="small">
+      I taught AP Physics C, a calculus-based, college-level physics course, at a small private high school,
+      where I designed and delivered three lectures each week on core physics topics. In those lessons, I
+      emphasized problem-solving techniques and real-world applications to help students build both conceptual
+      understanding and analytical skills. I also evaluated student learning by creating, assigning, and grading
+      homework and quizzes.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <strong>Physics Learning Assistant (LA)</strong><br />
+    <span class="muted">UC Irvine, 2022-2024</span>
+    <p class="small">
+      I assisted professors and teaching assistants with discussion sections for Physics 2
+      (Introduction to Physics), Physics 7C (Classical Mechanics), Physics 7D (Electricity and Magnetism), and
+      Physics 7E (Introduction to Waves and Optics). In this role, I worked closely with TAs to guide students
+      through problem-solving exercises and reinforce key course concepts. I also participated in weekly meetings
+      with professors and TAs to evaluate and refine instructional strategies, while providing individual support
+      to students to clarify difficult material and strengthen their understanding.
+    </p>
+  </div>
+</section>
+
+<section class="card section">
+  <h2>Mentoring</h2>
+
+  <div class="timeline-item">
+    <strong>"Resonance" Peer Mentor for Physics Students</strong><br />
+    <span class="muted">UC Irvine, 2022-2024</span>
+    <p class="small">
+      I mentored a "Resonance Group" of new physics majors, providing peer support and guidance as they adjusted to
+      the major. I advised mentees on course planning and on developing effective study habits, while also sharing
+      my own experience navigating the physics curriculum. In addition, I presented my undergraduate research to
+      new physics students to highlight opportunities for getting involved in research and to answer questions
+      about pursuing research as an undergraduate.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <strong>UCI International Center English Conversation Program Facilitator</strong><br />
+    <span class="muted">UC Irvine, 2021-2022</span>
+    <p class="small">
+      I volunteered with the UC Irvine International Center to help create a welcoming space where international
+      students could practice conversational English and build confidence in their language skills through
+      one-on-one conversations with native speakers. I met weekly with students for guided conversations using
+      provided prompts, fostering a supportive and inclusive environment for language practice, cultural exchange,
+      and personal connection.
+    </p>
+  </div>
+</section>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="copyright-date"></span> Shane O'Brien. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script src="script.js?v=21"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Shane O'Brien</title>
+  <link rel="stylesheet" href="styles.css?v=21" />
+<script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        var saved = localStorage.getItem('site-theme');
+        var theme = (urlTheme === 'dark' || urlTheme === 'light') ? urlTheme : saved;
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Shane O'Brien</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span class="nav-sep">|</span>
+        <a href="research.html">Research</a>
+        <span class="nav-sep">|</span>
+        <a href="publications.html">Publications &amp; Presentations</a>
+        <span class="nav-sep">|</span>
+        <a href="teaching.html">Teaching &amp; Mentoring</a>
+        <span class="nav-sep">|</span>
+        <a href="notes.html">Notes</a>
+      </div>
+      <div class="theme-control">
+        <span class="theme-label" id="theme-label">Light</span>
+        <label class="theme-switch" for="theme-toggle" aria-label="Toggle night mode">
+          <input class="theme-toggle-input" id="theme-toggle" type="checkbox" />
+          <span class="theme-toggle-slider" aria-hidden="true"></span>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Research</h1>
+      <p class="section-intro">This page is a collection of all of the research projects I have been involved with:</p>
+    </section>
+
+      <div class="card">
+        <div class="placeholder-label">Exoplanet Detection - Astronomy (Undergraduate Research)</div>
+        <h2>Searching for GEMS: Confirmation of Two New Gaseous Giant Exoplanets</h2>
+        <p><strong>Research area:</strong> Astronomy</p>
+        <p><strong>Advisors:</strong> Prof. Paul Robertson, Dr. Te Han, and Dr. Shubham Kanodia</p>
+        <p>
+          <strong>Summary:</strong> I confirmed the exoplanet candidate systems TOI-5916 b and TOI-6158 b through 
+          joint modeling of transit photometry and radial velocity data from TESS, HPF, and ground-based observations. 
+          Using the exoplanet and PyMC3 frameworks, I performed Bayesian inference with Markov-Chain Monte Carlo 
+          sampling to determine system parameters and investigate giant planet formation around M-dwarf stars. I also 
+          led the preparation of a manuscript submitted to AAS journals, presenting the properties of these systems 
+          and their broader implications for understanding giant exoplanet formation around low-mass stars.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="placeholder-label">Direct-Wind Magnet Design - Accelerator Physics (Undergraduate Research)</div>
+        <h2>DoE SULI @ Brookhaven National Lab: Replacing Legacy Magnet Design Code, Fall 2025 & Spring 2026</h2>
+        <p><strong>Research area:</strong> Accelerator Physics</p>
+        <p><strong>Advisors:</strong> Dr. Febin Kurian and Dr. Ramesh Gupta</p>
+        <p>
+          <strong>Summary:</strong> I am developing Python-based software to replace legacy Fortran tools used in the 
+          design of next-generation direct-wind accelerator magnets, including capabilities for field-harmonic 
+          optimization, magnetic-field modeling, and full coil-geometry generation. I am also building a user-friendly 
+          interface for the program so that scientists at Brookhaven National Laboratory can more easily design 
+          direct-wind magnets for future colliders, including the Electron-Ion Collider currently under construction 
+          at Brookhaven. I presented a prototype of this code at a poster session to an audience of peers and faculty.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="placeholder-label">Experimental Particle Physics - HEP-Ex (Undergraduate Research)</div>
+        <h2> Investigating the Hypothetical Heavy Top-Quark Partner Particle (T)</h2>
+        <p><strong>Research area:</strong> Particle Physics</p>
+        <p><strong>Advisor:</strong> Prof. Daniel Whiteson</p>
+        <p>
+          <strong>Summary:</strong> I analyzed simulated proton–proton collision events to investigate the 
+          production and decay channels of a hypothetical heavy top-quark partner (T), contributing to searches for 
+          physics beyond the Standard Model. Using MadGraph, Pythia, and Delphes, I generated simulated collider 
+          datasets and then performed analysis in Python and ROOT to isolate signal events from background and 
+          reconstruct invariant mass distributions. This work was partially conducted at CERN in Geneva, Switzerland,
+          where I attended summer lectures in particle physics and carried out research on-site with the UC Irvine 
+          ATLAS group.
+        </p>
+      </div>
+
+            <footer class="site-footer">
+      <p>&copy; <span id="copyright-date"></span> Shane O'Brien. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script src="script.js?v=21"></script>
+</body>
+</html>
