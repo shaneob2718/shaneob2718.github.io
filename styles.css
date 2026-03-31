@@ -15,6 +15,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -106,7 +107,9 @@ a {
   text-decoration: none;
 }
 
-a:hover { text-decoration: underline; }
+a:hover {
+  text-decoration: underline;
+}
 
 .hero {
   align-items: stretch;
@@ -153,6 +156,23 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0;
   text-align: left;
   font-size: 1.08rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -314,7 +334,9 @@ a:hover { text-decoration: underline; }
   font-size: 1.08rem;
 }
 
-.muted { color: var(--muted); }
+.muted {
+  color: var(--muted);
+}
 
 .placeholder-box {
   padding: 1rem 1.15rem;
@@ -352,11 +374,11 @@ a:hover { text-decoration: underline; }
 }
 
 .page-header {
-  padding: 1rem 0 0.5rem;
+  padding: 0.25rem 0 0.5rem;
 }
 
 .page-header h1 {
-  margin-bottom: 0.25rem;
+  margin: 0 0 0.25rem;
   font-size: clamp(1.9rem, 3.5vw, 2.6rem);
   font-weight: 700;
 }
@@ -412,7 +434,6 @@ code.inline {
   }
 }
 
-
 .stack {
   display: grid;
   gap: 1rem;
@@ -457,7 +478,6 @@ mjx-container[jax="SVG"] {
   max-width: 100%;
 }
 
-
 .nav-sep {
   color: #b8bcc3;
   margin: 0 0.5rem;
@@ -469,7 +489,6 @@ mjx-container[jax="SVG"] {
     display: none;
   }
 }
-
 
 html[data-theme="dark"] {
   --bg: #111418;
@@ -566,8 +585,6 @@ html[data-theme="dark"] .theme-toggle-slider::before {
   }
 }
 
-
-
 html[data-theme="dark"] .site-header {
   background: var(--bg);
   border-bottom-color: var(--line);
@@ -593,7 +610,6 @@ html[data-theme="dark"] select {
   color: var(--text);
   border-color: var(--line);
 }
-
 
 .blog-inline-image {
   display: block;
