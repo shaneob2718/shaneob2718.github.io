@@ -338,6 +338,12 @@ a:hover {
   color: var(--muted);
 }
 
+.card h3.presentation-year {
+  margin: 1.25rem 0 0.25rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
 .placeholder-box {
   padding: 1rem 1.15rem;
   margin-top: 1rem;
